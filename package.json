@@ -1,0 +1,22 @@
+{
+  "name": "sysresource",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "websocket": "^1.0.35"
+  },
+  "bin":{
+    "node sysresource":"./index.js"
+  }
+}
