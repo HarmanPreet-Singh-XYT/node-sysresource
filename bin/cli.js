@@ -72,8 +72,7 @@ async function init() {
   execSync('npm install', { cwd: projectPath, stdio: 'inherit' });
 
   // Step 7: Run npm start
-  console.log('Starting the project...');
-  execSync('npm run start', { cwd: projectPath, stdio: 'inherit' });
+  console.log('cd ./SysResource && npm start');
 }
 
 init();
