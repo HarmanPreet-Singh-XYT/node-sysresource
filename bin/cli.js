@@ -46,7 +46,7 @@ async function init() {
   const projectPath = path.join(process.cwd(), folderName);
   
   // Step 2: Ask for the API key
-  const apiKey = await askQuestion('Enter your API_KEY: ');
+  const apiKey = await askQuestion('Enter your API_KEY: ') || 'your-secret-key';
   
   rl.close(); // Close the readline interface
   
