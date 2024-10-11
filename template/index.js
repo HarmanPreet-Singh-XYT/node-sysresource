@@ -6,6 +6,8 @@ import cors from 'cors';
 // Create an Express app (optional)
 const app = express();
 
+const secretKey_SysResource = process.env.SYSRESOURCE_API_KEY;
+
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
@@ -19,7 +21,7 @@ app.use(cors(corsOptions));
 
 app.get('/sysresource/:key', (req, res) => {
     const { key } = req.params;
-    const secretKey = 'your-secret-key';
+    const secretKey = secretKey_SysResource;
     const data = sysresource_APIData({ paramKey: key, key: secretKey });
     if(data.success) {
         res.status(200).send(data.data);

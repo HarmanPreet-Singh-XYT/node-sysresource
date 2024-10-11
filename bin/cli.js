@@ -35,7 +35,7 @@ function copyTemplateFiles(templateDir, targetDir) {
 
 // Function to create .env file with the provided API key
 function createEnvFile(apiKey, targetDir) {
-  const envContent = `API_KEY='${apiKey}'\n`;
+  const envContent = `SYSRESOURCE_API_KEY='${apiKey}'\n`;
   fs.writeFileSync(path.join(targetDir, '.env'), envContent, 'utf-8');
 }
 
