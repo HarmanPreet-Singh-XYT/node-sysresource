@@ -11,9 +11,10 @@ const secretKey_SysResource = process.env.SYSRESOURCE_API_KEY;
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-    origin: 'https://sysresource.vercel.app',// your frontend domain or ip
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+    origin: 'https://sysresource.vercel.app',
+    methods: 'GET,POST',
+    credentials: true, // Enable cookies and authentication headers (if needed)
+};
 
 app.use(cors(corsOptions));
 
@@ -34,7 +35,7 @@ app.get('/sysresource/:key', (req, res) => {
 const server = http.createServer(app);
 
 // Define WebSocket authentication key and data sending interval
-const authKey = 'your-secret-key';
+const authKey = secretKey_SysResource;
 const interval = 5000; // Send data every 5 seconds (in milliseconds)
 
 // Pass the HTTP server to the WebSocket handler
