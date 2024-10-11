@@ -11,7 +11,7 @@ const secretKey_SysResource = process.env.SYSRESOURCE_API_KEY;
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-    origin: 'https://sysresource.vercel.app',
+    origin: 'https://sysresource.vercel.app/',
     methods: 'GET,POST',
     credentials: true, // Enable cookies and authentication headers (if needed)
 };
